@@ -1,0 +1,354 @@
+{$CLEO .cs}
+03A4: SCRIPT_NAME 'GANGTRF'
+
+:GANGTRF
+0001: WAIT 0
+0256: IS_PLAYER_PLAYING $PLAYER_CHAR
+004D: GOTO_IF_FALSE @GANGTRF
+// to prevent the "whole city colored turfs, but no actual gang presence" glitch.
+076C: SET_ZONE_GANG_STRENGTH 'LA' gang 0 to 0 // Los Santos
+076C: SET_ZONE_GANG_STRENGTH 'LA' gang 1 to 0
+076C: SET_ZONE_GANG_STRENGTH 'LA' gang 2 to 0
+076C: SET_ZONE_GANG_STRENGTH 'LA' gang 3 to 0
+076C: SET_ZONE_GANG_STRENGTH 'LA' gang 4 to 0
+076C: SET_ZONE_GANG_STRENGTH 'LA' gang 5 to 0
+076C: SET_ZONE_GANG_STRENGTH 'LA' gang 6 to 0
+076C: SET_ZONE_GANG_STRENGTH 'LA' gang 7 to 0
+076C: SET_ZONE_GANG_STRENGTH 'LA' gang 8 to 0
+076C: SET_ZONE_GANG_STRENGTH 'LA' gang 9 to 0
+076C: SET_ZONE_GANG_STRENGTH 'SF' gang 0 to 0 // San Fierro
+076C: SET_ZONE_GANG_STRENGTH 'SF' gang 1 to 0
+076C: SET_ZONE_GANG_STRENGTH 'SF' gang 2 to 0
+076C: SET_ZONE_GANG_STRENGTH 'SF' gang 3 to 0
+076C: SET_ZONE_GANG_STRENGTH 'SF' gang 4 to 0
+076C: SET_ZONE_GANG_STRENGTH 'SF' gang 5 to 0
+076C: SET_ZONE_GANG_STRENGTH 'SF' gang 6 to 0
+076C: SET_ZONE_GANG_STRENGTH 'SF' gang 7 to 0
+076C: SET_ZONE_GANG_STRENGTH 'SF' gang 8 to 0
+076C: SET_ZONE_GANG_STRENGTH 'SF' gang 9 to 0
+076C: SET_ZONE_GANG_STRENGTH 'VE' gang 0 to 0 // Las Venturas
+076C: SET_ZONE_GANG_STRENGTH 'VE' gang 1 to 0
+076C: SET_ZONE_GANG_STRENGTH 'VE' gang 2 to 0
+076C: SET_ZONE_GANG_STRENGTH 'VE' gang 3 to 0
+076C: SET_ZONE_GANG_STRENGTH 'VE' gang 4 to 0
+076C: SET_ZONE_GANG_STRENGTH 'VE' gang 5 to 0
+076C: SET_ZONE_GANG_STRENGTH 'VE' gang 6 to 0
+076C: SET_ZONE_GANG_STRENGTH 'VE' gang 7 to 0
+076C: SET_ZONE_GANG_STRENGTH 'VE' gang 8 to 0
+076C: SET_ZONE_GANG_STRENGTH 'VE' gang 9 to 0
+
+:GANGTRF_1 // Before "Doberman" - Ballas and Grove
+8018: NOT $SWEET_TOTAL_PASSED_MISSIONS > 7
+004D: GOTO_IF_FALSE @GANGTRF_2
+076C: SET_ZONE_GANG_STRENGTH 'GLN1B' gang 0 to 40 // North Glen Park
+076C: SET_ZONE_GANG_STRENGTH 'GLN1B' gang 1 to 0 // North Glen Park
+076C: SET_ZONE_GANG_STRENGTH 'GLN1B' gang 2 to 0 // North Glen Park
+076C: SET_ZONE_GANG_STRENGTH 'GLN1B' gang 8 to 0 // North Glen Park
+076C: SET_ZONE_GANG_STRENGTH 'LIND4A' gang 0 to 0 // South East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4A' gang 1 to 20 // South East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4A' gang 2 to 0 // South East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4A' gang 8 to 0 // South East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4C' gang 0 to 0 // North East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4C' gang 1 to 20 // North East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4C' gang 2 to 0 // North East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4C' gang 8 to 0 // North East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'SUN2' gang 0 to 0 // North Temple
+076C: SET_ZONE_GANG_STRENGTH 'SUN2' gang 1 to 30 // North Temple
+076C: SET_ZONE_GANG_STRENGTH 'SUN2' gang 2 to 0 // North Temple
+076C: SET_ZONE_GANG_STRENGTH 'SUN2' gang 8 to 0 // North Temple
+0002: GOTO @GANGTRF_3
+
+:GANGTRF_2 // After "The Green Sabre" and before "Home Coming" - Ballas and Grove
+00D6: ANDOR and
+0018: $LS_FINAL_TOTAL_PASSED_MISSIONS > 1 // The Green Sabre
+8018: NOT $MANSION_TOTAL_PASSED_MISSIONS > 2 // Home Coming
+004D: GOTO_IF_FALSE @GANGTRF_3
+076C: SET_ZONE_GANG_STRENGTH 'GLN1B' gang 0 to 40 // North Glen Park
+076C: SET_ZONE_GANG_STRENGTH 'GLN1B' gang 1 to 0 // North Glen Park
+076C: SET_ZONE_GANG_STRENGTH 'GLN1B' gang 2 to 0 // North Glen Park
+076C: SET_ZONE_GANG_STRENGTH 'GLN1B' gang 8 to 0 // North Glen Park
+076C: SET_ZONE_GANG_STRENGTH 'LIND4A' gang 0 to 20 // South East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4A' gang 1 to 0 // South East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4A' gang 2 to 0 // South East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4A' gang 8 to 0 // South East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4C' gang 0 to 20 // North East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4C' gang 1 to 0 // North East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4C' gang 2 to 0 // North East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'LIND4C' gang 8 to 0 // North East Willowfield
+076C: SET_ZONE_GANG_STRENGTH 'SUN2' gang 0 to 30 // North Temple
+076C: SET_ZONE_GANG_STRENGTH 'SUN2' gang 1 to 0 // North Temple
+076C: SET_ZONE_GANG_STRENGTH 'SUN2' gang 2 to 0 // North Temple
+076C: SET_ZONE_GANG_STRENGTH 'SUN2' gang 8 to 0 // North Temple
+
+:GANGTRF_3 // After "Body Harvest" and before "Los Desperados - Vagos and Aztecas
+00D6: ANDOR and
+0018: $TRUTH_TOTAL_PASSED_MISSIONS > 0 
+8018: NOT $RIOT_TOTAL_PASSED_MISSIONS > 1 
+004D: GOTO_IF_FALSE @GANGTRF_4
+076C: SET_ZONE_GANG_STRENGTH 'ELCO1' gang 0 to 0 // West El Corona 
+076C: SET_ZONE_GANG_STRENGTH 'ELCO1' gang 1 to 0 // West El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO1' gang 2 to 40 // West El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO1' gang 7 to 0 // West El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO1' gang 8 to 0 // West El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO2' gang 0 to 0 // East El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO2' gang 1 to 0 // East El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO2' gang 2 to 40 // East El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO2' gang 7 to 0 // East El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO2' gang 8 to 0 // East El Corona
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1A' gang 0 to 0 // South Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1A' gang 1 to 0 // South Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1A' gang 2 to 30 // South Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1A' gang 7 to 0 // South Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1A' gang 8 to 0 // South Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1B' gang 0 to 0 // North Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1B' gang 1 to 0 // North Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1B' gang 2 to 30 // North Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1B' gang 7 to 0 // North Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1B' gang 8 to 0 // North Little Mexico
+0002: GOTO @GANGTRF_5
+
+:GANGTRF_4 // Vagos and Aztecas
+076C: SET_ZONE_GANG_STRENGTH 'ELCO1' gang 0 to 0 // West El Corona 
+076C: SET_ZONE_GANG_STRENGTH 'ELCO1' gang 1 to 0 // West El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO1' gang 2 to 0 // West El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO1' gang 7 to 40 // West El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO1' gang 8 to 0 // West El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO2' gang 0 to 0 // East El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO2' gang 1 to 0 // East El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO2' gang 2 to 0 // East El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO2' gang 7 to 40 // East El Corona
+076C: SET_ZONE_GANG_STRENGTH 'ELCO2' gang 8 to 0 // East El Corona
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1A' gang 0 to 0 // South Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1A' gang 1 to 0 // South Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1A' gang 2 to 0 // South Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1A' gang 7 to 30 // South Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1A' gang 8 to 0 // South Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1B' gang 0 to 0 // North Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1B' gang 1 to 0 // North Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1B' gang 2 to 0 // North Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1B' gang 7 to 30 // North Little Mexico
+076C: SET_ZONE_GANG_STRENGTH 'LMEX1B' gang 8 to 0 // North Little Mexico
+
+:GANGTRF_5 // Before "Home Coming" - Rifa and Da Nang
+8018: NOT $MANSION_TOTAL_PASSED_MISSIONS > 2 // Home Coming
+004D: GOTO_IF_FALSE @GANGTRF_6
+// Rifa Turfs
+076C: SET_ZONE_GANG_STRENGTH 'BATTP' gang 1 to 0 // Battery Point
+076C: SET_ZONE_GANG_STRENGTH 'BATTP' gang 3 to 40 // Battery Point
+076C: SET_ZONE_GANG_STRENGTH 'BATTP' gang 4 to 0 // Battery Point
+076C: SET_ZONE_GANG_STRENGTH 'BATTP' gang 6 to 0 // Battery Point
+076C: SET_ZONE_GANG_STRENGTH 'DOH1' gang 1 to 0 // South Doherty
+076C: SET_ZONE_GANG_STRENGTH 'DOH1' gang 3 to 30 // South Doherty
+076C: SET_ZONE_GANG_STRENGTH 'DOH1' gang 4 to 0 // South Doherty
+076C: SET_ZONE_GANG_STRENGTH 'DOH1' gang 6 to 0 // South Doherty
+076C: SET_ZONE_GANG_STRENGTH 'DOH2' gang 1 to 0 // North Doherty
+076C: SET_ZONE_GANG_STRENGTH 'DOH2' gang 3 to 30 // North Doherty
+076C: SET_ZONE_GANG_STRENGTH 'DOH2' gang 4 to 0 // North Doherty
+076C: SET_ZONE_GANG_STRENGTH 'DOH2' gang 6 to 0 // North Doherty
+076C: SET_ZONE_GANG_STRENGTH 'GARC' gang 1 to 0 // Garcia
+076C: SET_ZONE_GANG_STRENGTH 'GARC' gang 3 to 40 // Garcia
+076C: SET_ZONE_GANG_STRENGTH 'GARC' gang 4 to 0 // Garcia
+076C: SET_ZONE_GANG_STRENGTH 'GARC' gang 6 to 0 // Garcia
+076C: SET_ZONE_GANG_STRENGTH 'HASH' gang 1 to 0 // Hashbury
+076C: SET_ZONE_GANG_STRENGTH 'HASH' gang 3 to 20 // Hashbury
+076C: SET_ZONE_GANG_STRENGTH 'HASH' gang 4 to 0 // Hashbury
+076C: SET_ZONE_GANG_STRENGTH 'HASH' gang 6 to 0 // Hashbury
+076C: SET_ZONE_GANG_STRENGTH 'THEA2' gang 1 to 0 // South King's
+076C: SET_ZONE_GANG_STRENGTH 'THEA2' gang 3 to 20 // South King's
+076C: SET_ZONE_GANG_STRENGTH 'THEA2' gang 4 to 0 // South King's
+076C: SET_ZONE_GANG_STRENGTH 'THEA2' gang 6 to 0 // South King's
+076C: SET_ZONE_GANG_STRENGTH 'THEA3' gang 1 to 0 // Central King's
+076C: SET_ZONE_GANG_STRENGTH 'THEA3' gang 3 to 10 // Central King's
+076C: SET_ZONE_GANG_STRENGTH 'THEA3' gang 4 to 0 // Central King's
+076C: SET_ZONE_GANG_STRENGTH 'THEA3' gang 6 to 0 // Central King's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP2' gang 1 to 0 // West Queen's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP2' gang 3 to 20 // West Queen's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP2' gang 4 to 0 // West Queen's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP2' gang 6 to 0 // West Queen's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP3' gang 1 to 0 // East Queen's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP3' gang 3 to 10 // East Queen's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP3' gang 4 to 0 // East Queen's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP3' gang 6 to 0 // East Queen's
+// Da Nang Turfs
+076C: SET_ZONE_GANG_STRENGTH 'EASB1' gang 1 to 0 // North Easter Basin
+076C: SET_ZONE_GANG_STRENGTH 'EASB1' gang 3 to 0 // North Easter Basin
+076C: SET_ZONE_GANG_STRENGTH 'EASB1' gang 4 to 40 // North Easter Basin
+076C: SET_ZONE_GANG_STRENGTH 'EASB1' gang 6 to 0 // North Easter Basin
+076C: SET_ZONE_GANG_STRENGTH 'EASB2' gang 1 to 0 // South Easter Basin
+076C: SET_ZONE_GANG_STRENGTH 'EASB2' gang 3 to 0 // South Easter Basin
+076C: SET_ZONE_GANG_STRENGTH 'EASB2' gang 4 to 40 // South Easter Basin
+076C: SET_ZONE_GANG_STRENGTH 'EASB2' gang 6 to 0 // South Easter Basin
+076C: SET_ZONE_GANG_STRENGTH 'ESPE1' gang 1 to 0 // North Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE1' gang 3 to 0 // North Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE1' gang 4 to 20 // North Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE1' gang 6 to 0 // North Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE2' gang 1 to 0 // Central Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE2' gang 3 to 0 // Central Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE2' gang 4 to 20 // Central Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE2' gang 6 to 0 // Central Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE3' gang 1 to 0 // East Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE3' gang 3 to 0 // East Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE3' gang 4 to 20 // East Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPE3' gang 6 to 0 // East Esplanade East
+076C: SET_ZONE_GANG_STRENGTH 'ESPN1' gang 1 to 0 // West Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN1' gang 3 to 0 // West Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN1' gang 4 to 30 // West Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN1' gang 6 to 0 // West Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN2' gang 1 to 0 // North Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN2' gang 3 to 0 // North Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN2' gang 4 to 30 // North Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN2' gang 6 to 0 // North Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN3' gang 1 to 0 // South Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN3' gang 3 to 0 // South Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN3' gang 4 to 30 // South Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'ESPN3' gang 6 to 0 // South Esplanade North
+076C: SET_ZONE_GANG_STRENGTH 'SFDWT4' gang 1 to 0 // East Downtown
+076C: SET_ZONE_GANG_STRENGTH 'SFDWT4' gang 3 to 0 // East Downtown
+076C: SET_ZONE_GANG_STRENGTH 'SFDWT4' gang 4 to 20 // East Downtown
+076C: SET_ZONE_GANG_STRENGTH 'SFDWT4' gang 6 to 0 // East Downtown
+076C: SET_ZONE_GANG_STRENGTH 'SFDWT6' gang 1 to 0 // South Downtown
+076C: SET_ZONE_GANG_STRENGTH 'SFDWT6' gang 3 to 0 // South Downtown
+076C: SET_ZONE_GANG_STRENGTH 'SFDWT6' gang 4 to 10 // South Downtown
+076C: SET_ZONE_GANG_STRENGTH 'SFDWT6' gang 6 to 0 // South Downtown
+
+:GANGTRF_6 // Triads
+// San Fierro Turfs
+076C: SET_ZONE_GANG_STRENGTH 'CALT' gang 1 to 0 // Calton Heights
+076C: SET_ZONE_GANG_STRENGTH 'CALT' gang 3 to 0 // Calton Heights
+076C: SET_ZONE_GANG_STRENGTH 'CALT' gang 4 to 0 // Calton Heights
+076C: SET_ZONE_GANG_STRENGTH 'CALT' gang 6 to 30 // Calton Heights
+076C: SET_ZONE_GANG_STRENGTH 'CHINA' gang 1 to 0 // Chinatown
+076C: SET_ZONE_GANG_STRENGTH 'CHINA' gang 3 to 0 // Chinatown
+076C: SET_ZONE_GANG_STRENGTH 'CHINA' gang 4 to 0 // Chinatown
+076C: SET_ZONE_GANG_STRENGTH 'CHINA' gang 6 to 40 // Chinatown
+076C: SET_ZONE_GANG_STRENGTH 'JUNIHI' gang 1 to 0 // Juniper Hill
+076C: SET_ZONE_GANG_STRENGTH 'JUNIHI' gang 3 to 0 // Juniper Hill
+076C: SET_ZONE_GANG_STRENGTH 'JUNIHI' gang 4 to 0 // Juniper Hill
+076C: SET_ZONE_GANG_STRENGTH 'JUNIHI' gang 6 to 30 // Juniper Hill
+076C: SET_ZONE_GANG_STRENGTH 'JUNIHO' gang 1 to 0 // Juniper Hollow
+076C: SET_ZONE_GANG_STRENGTH 'JUNIHO' gang 3 to 0 // Juniper Hollow
+076C: SET_ZONE_GANG_STRENGTH 'JUNIHO' gang 4 to 0 // Juniper Hollow
+076C: SET_ZONE_GANG_STRENGTH 'JUNIHO' gang 6 to 20 // Juniper Hollow
+076C: SET_ZONE_GANG_STRENGTH 'THEA1' gang 1 to 0 // North King's
+076C: SET_ZONE_GANG_STRENGTH 'THEA1' gang 3 to 0 // North King's
+076C: SET_ZONE_GANG_STRENGTH 'THEA1' gang 4 to 0 // North King's
+076C: SET_ZONE_GANG_STRENGTH 'THEA1' gang 6 to 20 // North King's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP1' gang 1 to 0 // North Queen's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP1' gang 3 to 0 // North Queen's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP1' gang 4 to 0 // North Queen's
+076C: SET_ZONE_GANG_STRENGTH 'WESTP1' gang 6 to 10 // North Queen's
+// Las Venturas Turfs
+00D6: ANDOR and
+8018: NOT $HEIST_TOTAL_PASSED_MISSIONS > 5 // Breaking the Bank at Caligula's
+8018: NOT $MANSION_TOTAL_PASSED_MISSIONS > 2 // Home Coming
+004D: GOTO_IF_FALSE @GANGTRF_7
+076C: SET_ZONE_GANG_STRENGTH 'DRAG' gang 5 to 0 // The Four Dragons Casino
+076C: SET_ZONE_GANG_STRENGTH 'DRAG' gang 6 to 40 // The Four Dragons Casino
+076C: SET_ZONE_GANG_STRENGTH 'HIGH' gang 5 to 0 // The High Roller
+076C: SET_ZONE_GANG_STRENGTH 'HIGH' gang 6 to 30 // The High Roller
+076C: SET_ZONE_GANG_STRENGTH 'PINK' gang 5 to 0 // The Pink Swan
+076C: SET_ZONE_GANG_STRENGTH 'PINK' gang 6 to 30 // The Pink Swan
+076C: SET_ZONE_GANG_STRENGTH 'PIRA' gang 5 to 0 // Pirates in Men's Pants
+076C: SET_ZONE_GANG_STRENGTH 'PIRA' gang 6 to 20 // Pirates in Men's Pants
+076C: SET_ZONE_GANG_STRENGTH 'STRIP1' gang 6 to 10 // South The Strip
+
+:GANGTRF_7 // Italian Mafia
+00D6: ANDOR and
+8018: NOT $HEIST_TOTAL_PASSED_MISSIONS > 5 // Breaking the Bank at Caligula's
+8018: NOT $MANSION_TOTAL_PASSED_MISSIONS > 2 // Home Coming
+004D: GOTO_IF_FALSE @GANGTRF_8
+// Around Caligula's
+076C: SET_ZONE_GANG_STRENGTH 'CALI1' gang 5 to 40 // South Caligula's Palace
+076C: SET_ZONE_GANG_STRENGTH 'CALI1' gang 6 to 0 // South Caligula's Palace
+076C: SET_ZONE_GANG_STRENGTH 'CALI2' gang 5 to 40 // North Caligula's Palace
+076C: SET_ZONE_GANG_STRENGTH 'CALI2' gang 6 to 0 // North Caligula's Palace
+076C: SET_ZONE_GANG_STRENGTH 'CAM' gang 5 to 20 // The Camel's Toe
+076C: SET_ZONE_GANG_STRENGTH 'CAM' gang 6 to 0 // The Camel's Toe
+076C: SET_ZONE_GANG_STRENGTH 'LOT' gang 5 to 20 // Come-A-Lot
+076C: SET_ZONE_GANG_STRENGTH 'LOT' gang 6 to 0 // Come-A-Lot
+076C: SET_ZONE_GANG_STRENGTH 'PILL1' gang 5 to 20 // Pilgrim
+076C: SET_ZONE_GANG_STRENGTH 'PILL1' gang 6 to 0 // Pilgrim
+076C: SET_ZONE_GANG_STRENGTH 'RING' gang 5 to 30 // The Clown's Pocket
+076C: SET_ZONE_GANG_STRENGTH 'RING' gang 6 to 0 // The Clown's Pocket
+076C: SET_ZONE_GANG_STRENGTH 'ROY' gang 5 to 30 // Royal Casino
+076C: SET_ZONE_GANG_STRENGTH 'ROY' gang 6 to 0 // Royal Casino
+076C: SET_ZONE_GANG_STRENGTH 'STRIP1' gang 5 to 10 // South The Strip
+076C: SET_ZONE_GANG_STRENGTH 'STRIP3' gang 5 to 30 // North-Central The Strip
+076C: SET_ZONE_GANG_STRENGTH 'STRIP3' gang 6 to 0 // North-Central The Strip
+076C: SET_ZONE_GANG_STRENGTH 'STRIP4' gang 5 to 30 // South-Central The Strip
+076C: SET_ZONE_GANG_STRENGTH 'STRIP4' gang 6 to 0 // South-Central The Strip
+076C: SET_ZONE_GANG_STRENGTH 'VISA2' gang 5 to 30 // South The Visage
+076C: SET_ZONE_GANG_STRENGTH 'VISA2' gang 6 to 0 // South The Visage
+// Other LV Mafia turfs
+076C: SET_ZONE_GANG_STRENGTH 'PRP1' gang 5 to 20 // Central Prickle Pine
+076C: SET_ZONE_GANG_STRENGTH 'PRP1' gang 6 to 0 // Central Prickle Pine
+076C: SET_ZONE_GANG_STRENGTH 'PRP2' gang 5 to 20 // West Prickle Pine
+076C: SET_ZONE_GANG_STRENGTH 'PRP2' gang 6 to 0 // West Prickle Pine
+076C: SET_ZONE_GANG_STRENGTH 'PRP3' gang 5 to 20 // Mid-East Prickle Pine
+076C: SET_ZONE_GANG_STRENGTH 'PRP3' gang 6 to 0 // Mid-East Prickle Pine
+076C: SET_ZONE_GANG_STRENGTH 'PRP4' gang 5 to 20 // East Prickle Pine
+076C: SET_ZONE_GANG_STRENGTH 'PRP4' gang 6 to 0 // East Prickle Pine
+076C: SET_ZONE_GANG_STRENGTH 'REDW1' gang 5 to 20 // Central Redsands West
+076C: SET_ZONE_GANG_STRENGTH 'REDW1' gang 6 to 0 // Central Redsands West
+076C: SET_ZONE_GANG_STRENGTH 'REDW2' gang 5 to 20 // South Redsands West
+076C: SET_ZONE_GANG_STRENGTH 'REDW2' gang 6 to 0 // South Redsands West
+076C: SET_ZONE_GANG_STRENGTH 'WWE' gang 5 to 40 // Whitewood Estates
+076C: SET_ZONE_GANG_STRENGTH 'WWE' gang 6 to 0 // Whitewood Estates
+076C: SET_ZONE_GANG_STRENGTH 'WWE1' gang 5 to 30 // East Whitewood Estates
+076C: SET_ZONE_GANG_STRENGTH 'WWE1' gang 6 to 0 // East Whitewood Estates
+
+:GANGTRF_8 // After "Wrong Side of the Tracks" and before "Doberman" - Russian Mafia
+00D6: ANDOR and
+0018: $SMOKE_TOTAL_PASSED_MISSIONS > 2 // Wrong Side of the Tracks
+8018: NOT $SWEET_TOTAL_PASSED_MISSIONS > 7 // Doberman
+004D: GOTO_IF_FALSE @GANGTRF_9
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1A' gang 0 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1A' gang 1 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1A' gang 2 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1A' gang 8 to 30 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1B' gang 0 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1B' gang 1 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1B' gang 2 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1B' gang 8 to 40 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC2' gang 0 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC2' gang 1 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC2' gang 2 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC2' gang 8 to 20 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3A' gang 0 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3A' gang 1 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3A' gang 2 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3A' gang 8 to 30 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3C' gang 0 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3C' gang 1 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3C' gang 2 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3C' gang 8 to 10 // Ocean Docks
+0002: GOTO @GANGTRF_END
+
+:GANGTRF_9 // After "The Green Sabre" and before "Home Coming" - Russian Mafia
+00D6: ANDOR and
+0018: $LS_FINAL_TOTAL_PASSED_MISSIONS > 1 // The Green Sabre
+8018: NOT $MANSION_TOTAL_PASSED_MISSIONS > 2 // Home Coming
+004D: GOTO_IF_FALSE @GANGTRF_END
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1A' gang 0 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1A' gang 1 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1A' gang 2 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1A' gang 8 to 30 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1B' gang 0 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1B' gang 1 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1B' gang 2 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC1B' gang 8 to 40 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC2' gang 0 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC2' gang 1 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC2' gang 2 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC2' gang 8 to 20 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3A' gang 0 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3A' gang 1 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3A' gang 2 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3A' gang 8 to 30 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3C' gang 0 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3C' gang 1 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3C' gang 2 to 0 // Ocean Docks
+076C: SET_ZONE_GANG_STRENGTH 'LDOC3C' gang 8 to 10 // Ocean Docks
+
+:GANGTRF_END
+0002: GOTO @GANGTRF

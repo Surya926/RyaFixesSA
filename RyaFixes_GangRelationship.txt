@@ -1,0 +1,295 @@
+{$CLEO .cs}
+03A4: SCRIPT_NAME 'GANGREL'
+
+:GANGREL
+0001: WAIT 0
+0256: IS_PLAYER_PLAYING $PLAYER_CHAR
+004D: GOTO_IF_FALSE @GANGREL
+
+:GANGREL_2 // Initialize the relationships
+0@ == 0
+004D: GOTO_IF_FALSE @GANGREL_3
+// Gangs to CJ
+0746: SET_RELATIONSHIP 3 of_ped_type 7 to_pedtype 0 // Ballas - Disrespect
+0746: SET_RELATIONSHIP 0 of_ped_type 8 to_pedtype 0 // Grove - Respect
+0746: SET_RELATIONSHIP 3 of_ped_type 9 to_pedtype 0 // Vagos - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 10 to_pedtype 0 // Rifa - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 11 to_pedtype 0 // Da Nang - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 12 to_pedtype 0 // Mafia - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 13 to_pedtype 0 // Triads - Neutral
+0746: SET_RELATIONSHIP 3 of_ped_type 14 to_pedtype 0 // Aztecas - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 15 to_pedtype 0 // Russians - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 16 to_pedtype 0 // Bikers - Neutral
+//
+// Ballas to others
+0746: SET_RELATIONSHIP 0 of_ped_type 7 to_pedtype 7 // Ballas - Respect
+0746: SET_RELATIONSHIP 4 of_ped_type 7 to_pedtype 8 // Grove - Hate
+0746: SET_RELATIONSHIP 3 of_ped_type 7 to_pedtype 9 // Vagos - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 7 to_pedtype 10 // Rifa - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 7 to_pedtype 11 // Da Nang - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 7 to_pedtype 12 // Mafia - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 7 to_pedtype 13 // Triads - Neutral
+0746: SET_RELATIONSHIP 3 of_ped_type 7 to_pedtype 14 // Aztecas - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 7 to_pedtype 15 // Russians - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 7 to_pedtype 16 // Bikers - Neutral
+//
+// Grove to others
+0746: SET_RELATIONSHIP 4 of_ped_type 8 to_pedtype 7 // Ballas - Hate
+0746: SET_RELATIONSHIP 0 of_ped_type 8 to_pedtype 8 // Grove - Respect
+0746: SET_RELATIONSHIP 3 of_ped_type 8 to_pedtype 9 // Vagos - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 8 to_pedtype 10 // Rifa - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 8 to_pedtype 11 // Da Nang - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 8 to_pedtype 12 // Mafia - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 8 to_pedtype 13 // Triads - Neutral
+0746: SET_RELATIONSHIP 3 of_ped_type 8 to_pedtype 14 // Aztecas - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 8 to_pedtype 15 // Russians - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 8 to_pedtype 16 // Bikers - Neutral
+//
+// Vagos to others
+0746: SET_RELATIONSHIP 3 of_ped_type 9 to_pedtype 7 // Ballas - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 9 to_pedtype 8 // Grove - Disrespect
+0746: SET_RELATIONSHIP 0 of_ped_type 9 to_pedtype 9 // Vagos - Respect
+0746: SET_RELATIONSHIP 2 of_ped_type 9 to_pedtype 10 // Rifa - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 9 to_pedtype 11 // Da Nang - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 9 to_pedtype 12 // Mafia - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 9 to_pedtype 13 // Triads - Neutral
+0746: SET_RELATIONSHIP 4 of_ped_type 9 to_pedtype 14 // Aztecas - Hate
+0746: SET_RELATIONSHIP 3 of_ped_type 9 to_pedtype 15 // Russians - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 9 to_pedtype 16 // Bikers - Neutral
+//
+// Rifa to others
+0746: SET_RELATIONSHIP 2 of_ped_type 10 to_pedtype 7 // Ballas - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 10 to_pedtype 8 // Grove - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 10 to_pedtype 9 // Vagos - Neutral
+0746: SET_RELATIONSHIP 0 of_ped_type 10 to_pedtype 10 // Rifa - Respect
+0746: SET_RELATIONSHIP 3 of_ped_type 10 to_pedtype 11 // Da Nang - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 10 to_pedtype 12 // Mafia - Neutral
+0746: SET_RELATIONSHIP 3 of_ped_type 10 to_pedtype 13 // Triads - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 10 to_pedtype 14 // Aztecas - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 10 to_pedtype 15 // Russians - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 10 to_pedtype 16 // Bikers - Neutral
+//
+// Da Nang to others
+0746: SET_RELATIONSHIP 2 of_ped_type 11 to_pedtype 7 // Ballas - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 11 to_pedtype 8 // Grove - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 11 to_pedtype 9 // Vagos - Neutral
+0746: SET_RELATIONSHIP 3 of_ped_type 11 to_pedtype 10 // Rifa - Disrespect
+0746: SET_RELATIONSHIP 0 of_ped_type 11 to_pedtype 11 // Da Nang - Respect
+0746: SET_RELATIONSHIP 2 of_ped_type 11 to_pedtype 12 // Mafia - Neutral
+0746: SET_RELATIONSHIP 4 of_ped_type 11 to_pedtype 13 // Triads - Hate
+0746: SET_RELATIONSHIP 2 of_ped_type 11 to_pedtype 14 // Aztecas - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 11 to_pedtype 15 // Russians - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 11 to_pedtype 16 // Bikers - Neutral
+//
+// Mafia to others
+0746: SET_RELATIONSHIP 2 of_ped_type 12 to_pedtype 7 // Ballas - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 12 to_pedtype 8 // Grove - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 12 to_pedtype 9 // Vagos - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 12 to_pedtype 10 // Rifa - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 12 to_pedtype 11 // Da Nang - Neutral
+0746: SET_RELATIONSHIP 0 of_ped_type 12 to_pedtype 12 // Mafia - Respect
+0746: SET_RELATIONSHIP 4 of_ped_type 12 to_pedtype 13 // Triads - Hate
+0746: SET_RELATIONSHIP 2 of_ped_type 12 to_pedtype 14 // Aztecas - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 12 to_pedtype 15 // Russians - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 12 to_pedtype 16 // Bikers - Neutral
+//
+// Triads to others
+0746: SET_RELATIONSHIP 2 of_ped_type 13 to_pedtype 7 // Ballas - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 13 to_pedtype 8 // Grove - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 13 to_pedtype 9 // Vagos - Neutral
+0746: SET_RELATIONSHIP 3 of_ped_type 13 to_pedtype 10 // Rifa - Disrespect
+0746: SET_RELATIONSHIP 4 of_ped_type 13 to_pedtype 11 // Da Nang - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 13 to_pedtype 12 // Mafia - Hate
+0746: SET_RELATIONSHIP 0 of_ped_type 13 to_pedtype 13 // Triads - Respect
+0746: SET_RELATIONSHIP 2 of_ped_type 13 to_pedtype 14 // Aztecas - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 13 to_pedtype 15 // Russians - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 13 to_pedtype 16 // Bikers - Neutral
+//
+// Aztecas to others
+0746: SET_RELATIONSHIP 3 of_ped_type 14 to_pedtype 7 // Ballas - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 14 to_pedtype 8 // Grove - Disrespect
+0746: SET_RELATIONSHIP 4 of_ped_type 14 to_pedtype 9 // Vagos - Hate
+0746: SET_RELATIONSHIP 3 of_ped_type 14 to_pedtype 10 // Rifa - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 14 to_pedtype 11 // Da Nang - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 14 to_pedtype 12 // Mafia - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 14 to_pedtype 13 // Triads - Neutral
+0746: SET_RELATIONSHIP 0 of_ped_type 14 to_pedtype 14 // Aztecas - Respect
+0746: SET_RELATIONSHIP 3 of_ped_type 14 to_pedtype 15 // Russians - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 14 to_pedtype 16 // Bikers - Neutral
+//
+// Russians to others
+0746: SET_RELATIONSHIP 3 of_ped_type 15 to_pedtype 7 // Ballas - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 15 to_pedtype 8 // Grove - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 15 to_pedtype 9 // Vagos - Disrespect
+0746: SET_RELATIONSHIP 2 of_ped_type 15 to_pedtype 10 // Rifa - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 15 to_pedtype 11 // Da Nang - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 15 to_pedtype 12 // Mafia - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 15 to_pedtype 13 // Triads - Neutral
+0746: SET_RELATIONSHIP 3 of_ped_type 15 to_pedtype 14 // Aztecas - Disrespect
+0746: SET_RELATIONSHIP 0 of_ped_type 15 to_pedtype 15 // Russians - Respect
+0746: SET_RELATIONSHIP 2 of_ped_type 15 to_pedtype 16 // Bikers - Neutral
+//
+// Bikers to others
+0746: SET_RELATIONSHIP 2 of_ped_type 16 to_pedtype 7 // Ballas - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 16 to_pedtype 8 // Grove - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 16 to_pedtype 9 // Vagos - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 16 to_pedtype 10 // Rifa - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 16 to_pedtype 11 // Da Nang - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 16 to_pedtype 12 // Mafia - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 16 to_pedtype 13 // Triads - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 16 to_pedtype 14 // Aztecas - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 16 to_pedtype 15 // Russians - Neutral
+0746: SET_RELATIONSHIP 0 of_ped_type 16 to_pedtype 16 // Bikers - Respect
+//
+// Stat flag for hardcoded new features
+0629: SET_INT_STAT 119 TO 0
+0@ = 1
+
+:GANGREL_3 // Drive-by
+0018:   $SWEET_TOTAL_PASSED_MISSIONS > 4 
+004D: GOTO_IF_FALSE @GANGREL_4
+0746: SET_RELATIONSHIP 4 of_ped_type 7 to_ped_type 0 // Ballas to CJ - Hate
+
+:GANGREL_4 // Cesar Vialpando
+00D6: ANDOR and
+0018:   $SWEET_TOTAL_PASSED_MISSIONS > 6 
+8018:   not $RIOT_TOTAL_PASSED_MISSIONS > 1 
+004D: GOTO_IF_FALSE @GANGREL_5
+0746: SET_RELATIONSHIP 2 of_ped_type 14 to_ped_type 0 // Aztecas to CJ - Neutral
+0629: SET_INT_STAT 119 TO 1
+
+:GANGREL_5 // Wrong Side of the Tracks
+0018:   $SMOKE_TOTAL_PASSED_MISSIONS > 2 
+004D: GOTO_IF_FALSE @GANGREL_5A
+0746: SET_RELATIONSHIP 1 of_ped_type 9 to_ped_type 10 // Vagos to Rifa - Like
+0746: SET_RELATIONSHIP 1 of_ped_type 10 to_ped_type 9 // Rifa to Vagos - Like                       
+
+:GANGREL_5A // Just Business
+00D6: ANDOR and
+0018:   $SMOKE_TOTAL_PASSED_MISSIONS > 3 
+8018: NOT $CRASH_LS_TOTAL_PASSED_MISSIONS > 1 
+004D: GOTO_IF_FALSE @GANGREL_5B
+0746: SET_RELATIONSHIP 3 of_ped_type 8 to_ped_type 15 // Grove to Russians - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 15 to_ped_type 0 // Russians to CJ - Disrespect                       
+0746: SET_RELATIONSHIP 3 of_ped_type 15 to_ped_type 8 // Russians to Grove - Disrespect                       
+
+:GANGREL_5B // Burning Desire
+0018:   $CRASH_LS_TOTAL_PASSED_MISSIONS > 0 
+004D: GOTO_IF_FALSE @GANGREL_5C
+0746: SET_RELATIONSHIP 4 of_ped_type 8 to_ped_type 9 // Grove to Vagos - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 9 to_ped_type 0 // Vagos to CJ - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 9 to_ped_type 8 // Vagos to Grove - Hate
+
+:GANGREL_5C // Gray Imports
+0018:   $CRASH_LS_TOTAL_PASSED_MISSIONS > 1 
+004D: GOTO_IF_FALSE @GANGREL_6
+0746: SET_RELATIONSHIP 1 of_ped_type 7 to_ped_type 15 // Ballas to Russians - Like
+0746: SET_RELATIONSHIP 4 of_ped_type 8 to_ped_type 15 // Grove to Russians - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 15 to_ped_type 0 // Russians to CJ - Hate                       
+0746: SET_RELATIONSHIP 1 of_ped_type 15 to_ped_type 7 // Russians to Ballas - Like
+0746: SET_RELATIONSHIP 4 of_ped_type 15 to_ped_type 8 // Russians to Grove - Hate                       
+
+:GANGREL_6 // The Green Sabre
+0018:   $LS_FINAL_TOTAL_PASSED_MISSIONS > 1 
+004D: GOTO_IF_FALSE @GANGREL_6A
+0746: SET_RELATIONSHIP 1 of_ped_type 7 to_ped_type 9 // Ballas to Vagos - Like
+0746: SET_RELATIONSHIP 1 of_ped_type 9 to_ped_type 7 // Vagos to Ballas - Like
+
+:GANGREL_6A // Body Harvest - King in Exile
+00D6: ANDOR and
+0018:   $TRUTH_TOTAL_PASSED_MISSIONS > 0 
+8018:   not $RIOT_TOTAL_PASSED_MISSIONS > 1 
+004D: GOTO_IF_FALSE @GANGREL_7
+0746: SET_RELATIONSHIP 2 of_ped_type 8 to_ped_type 14 // Grove to Aztecas - Neutral
+0746: SET_RELATIONSHIP 2 of_ped_type 14 to_ped_type 8 // Aztecas to Grove - Neutral
+
+:GANGREL_7 // Mountain Cloud Boys
+0018:   $WUZIMU_TOTAL_PASSED_MISSIONS > 0 
+004D: GOTO_IF_FALSE @GANGREL_8
+0746: SET_RELATIONSHIP 1 of_ped_type 8 to_ped_type 13 // Grove to Triads - Like 
+0746: SET_RELATIONSHIP 1 of_ped_type 13 to_ped_type 8 // Triads to Grove - Like
+8018:   not $CASINO_TOTAL_PASSED_MISSIONS > 6
+004D: GOTO_IF_FALSE @GANGREL_8
+0746: SET_RELATIONSHIP 1 of_ped_type 13 to_ped_type 0 // Triads to CJ - Like
+0629: SET_INT_STAT 119 TO 2
+8018:   not $WUZIMU_TOTAL_PASSED_MISSIONS > 4 
+004D: GOTO_IF_FALSE @GANGREL_8
+0746: SET_RELATIONSHIP 3 of_ped_type 8 to_ped_type 11 // Grove to Da Nang - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 11 to_ped_type 0 // Da Nang to CJ - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 11 to_ped_type 8 // Da Nang to Grove - Disrespect
+
+:GANGREL_8 // The Da Nang Thang
+0018:   $WUZIMU_TOTAL_PASSED_MISSIONS > 4 
+004D: GOTO_IF_FALSE @GANGREL_8A
+0746: SET_RELATIONSHIP 4 of_ped_type 8 to_ped_type 11 // Grove to Da Nang - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 11 to_ped_type 0 // Da Nang to CJ - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 11 to_ped_type 8 // Da Nang to Grove - Hate
+
+:GANGREL_8A // Jizzy
+0018:   $SYNDICATE_TOTAL_PASSED_MISSIONS > 1 
+004D: GOTO_IF_FALSE @GANGREL_9
+0746: SET_RELATIONSHIP 1 of_ped_type 13 to_ped_type 14 // Triads to Aztecas - Like
+0746: SET_RELATIONSHIP 1 of_ped_type 14 to_ped_type 13 // Aztecas to Triads - Like
+
+:GANGREL_9 // Outrider
+00D6: ANDOR and
+0018:   $SYNDICATE_TOTAL_PASSED_MISSIONS > 5 
+8018:   not $SYNDICATE_TOTAL_PASSED_MISSIONS > 7
+004D: GOTO_IF_FALSE @GANGREL_10
+0746: SET_RELATIONSHIP 3 of_ped_type 8 to_ped_type 10 // Grove to Rifa - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 10 to_ped_type 0 // Rifa to CJ - Disrespect
+0746: SET_RELATIONSHIP 3 of_ped_type 10 to_ped_type 8 // Rifa to Grove - Disrespect
+0629: SET_INT_STAT 119 TO 3
+
+:GANGREL_10 // Pier 69
+0018:   $SYNDICATE_TOTAL_PASSED_MISSIONS > 7 
+004D: GOTO_IF_FALSE @GANGREL_11
+0746: SET_RELATIONSHIP 1 of_ped_type 7 to_ped_type 10 // Ballas to Rifa - Like
+0746: SET_RELATIONSHIP 4 of_ped_type 7 to_ped_type 13 // Ballas to Triads - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 7 to_ped_type 14 // Ballas to Aztecas - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 8 to_ped_type 10 // Grove to Rifa - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 10 to_ped_type 0 // Rifa to CJ - Hate
+0746: SET_RELATIONSHIP 1 of_ped_type 10 to_ped_type 7 // Rifa to Ballas - Like
+0746: SET_RELATIONSHIP 4 of_ped_type 10 to_ped_type 8 // Rifa to Grove - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 10 to_ped_type 13 // Rifa to Triads - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 10 to_ped_type 14 // Rifa to Aztecas - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 13 to_ped_type 7 // Triads to Ballas - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 13 to_ped_type 10 // Triads to Rifa - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 14 to_ped_type 7 // Aztecas to Ballas - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 14 to_ped_type 10 // Aztecas to Rifa - Hate
+
+:GANGREL_11 // Fish in a Barrel
+0018:   $CASINO_TOTAL_PASSED_MISSIONS > 6
+004D: GOTO_IF_FALSE @GANGREL_11A
+0746: SET_RELATIONSHIP 0 of_ped_type 13 to_ped_type 0 // Triads to CJ - Respect
+8018:   not $RIOT_TOTAL_PASSED_MISSIONS > 1 
+004D: GOTO_IF_FALSE @GANGREL_11A
+0629: SET_INT_STAT 119 TO 4
+
+:GANGREL_11A // Breaking the Bank at Caligula's
+0018:   $HEIST_TOTAL_PASSED_MISSIONS > 5 
+004D: GOTO_IF_FALSE @GANGREL_11B
+0746: SET_RELATIONSHIP 4 of_ped_type 8 to_ped_type 12 // Grove to Mafia - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 12 to_ped_type 0 // Mafia to CJ - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 12 to_ped_type 8 // Mafia to Grove - Hate
+
+:GANGREL_11B // A Home in the Hills
+0018:   $MANSION_TOTAL_PASSED_MISSIONS > 0 
+004D: GOTO_IF_FALSE @GANGREL_12
+0746: SET_RELATIONSHIP 4 of_ped_type 9 to_ped_type 13 // Vagos to Triads - Hate
+0746: SET_RELATIONSHIP 4 of_ped_type 13 to_ped_type 9 // Triads to Vagos - Hate
+
+:GANGREL_12 // Los Desperados - In preparation for End of the Line
+0018:   $RIOT_TOTAL_PASSED_MISSIONS > 1 
+004D: GOTO_IF_FALSE @GANGREL_END
+0746: SET_RELATIONSHIP 1 of_ped_type 8 to_ped_type 14 // Grove to Aztecas - Like
+0746: SET_RELATIONSHIP 1 of_ped_type 9 to_ped_type 15 // Vagos to Russians - Like
+0746: SET_RELATIONSHIP 1 of_ped_type 10 to_ped_type 15 // Rifa to Russians - Like
+0746: SET_RELATIONSHIP 0 of_ped_type 14 to_ped_type 0 // Aztecas to CJ - Respect
+0746: SET_RELATIONSHIP 1 of_ped_type 14 to_ped_type 8 // Aztecas to Grove - Like
+0746: SET_RELATIONSHIP 1 of_ped_type 15 to_ped_type 9 // Russians to Vagos - Like
+0746: SET_RELATIONSHIP 1 of_ped_type 15 to_ped_type 10 // Russians to Rifa - Like
+0629: SET_INT_STAT 119 TO 5
+
+:GANGREL_END
+0002: GOTO @GANGREL
